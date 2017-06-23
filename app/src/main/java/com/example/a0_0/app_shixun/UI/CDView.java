@@ -46,7 +46,34 @@ public class CDView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if(clipBitmap==null){
+            super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+            return;
+        }
 
+        int width=0;
+        int height=0;
+
+        //mode of width
+        int widthMode=MeasureSpec.getMode(widthMeasureSpec);
+        //mode of height
+        int heightMode=MeasureSpec.getMode(heightMeasureSpec);
+        //size of width
+        int widthSize=MeasureSpec.getSize(widthMeasureSpec);
+        //size of height
+        int heightSize=MeasureSpec.getSize(heightMeasureSpec);
+
+        //parent asign the size
+        if(widthMode==MeasureSpec.EXACTLY){
+            width=widthSize;
+        }
+        else
+        {
+            //child compute the size of itself
+            width=clipBitmap.getWidth();
+            //parent assign the max size,child should<=widthSize
+            if(){
+
+            }
         }
     }
 }

@@ -64,7 +64,7 @@ public class MainActivity extends BaseActivity implements android.view.View.OnCl
         tv_bendi = (TextView) findViewById(R.id.tv_bendi);
         tv_wangluo = (TextView) findViewById(R.id.tv_wangluo);
         viewPager=(ViewPager)findViewById(R.id.vp_main_container);
-        popshownView=findViewById(R.id.view_pop_show)
+        popshownView=findViewById(R.id.view_pop_show);
 
 
         viewPager.setAdapter(pagerAdapter);
@@ -204,7 +204,7 @@ public class MainActivity extends BaseActivity implements android.view.View.OnCl
                 break;
             case R.id.tv_pop_exit:
                 stopService(new Intent(this,PlayService.class));
-                stopService(new Intent(this,DownloadService.class));
+//                stopService(new Intent(this,DownloadService.class));
                 break;
             case R.id.tv_pop_shutdown:
                 finish();
